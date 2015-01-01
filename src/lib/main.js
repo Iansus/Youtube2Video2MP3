@@ -3,8 +3,8 @@ var tabs = require("sdk/tabs");
 var timers = require('sdk/timers');
 
 var button = buttons.ActionButton({
-  id: "mozilla-link",
-  label: "Visit Mozilla",
+  id: "video-dl",
+  label: "No video to download",
   icon: {
     "16": "./icon-16.png",
     "32": "./icon-32.png",
@@ -55,7 +55,8 @@ function handleTabLoad(tab)
 		if (res && !ret)
 		{
 			button.state(tab, {
-				disabled: false
+				disabled: false,
+				label: "Download video"
 			});
 			ret = true;
 		}
@@ -68,7 +69,8 @@ function handleTabLoad(tab)
 		return;
 	
 	button.state(tab, {
-		disabled: true
+		disabled: true,
+		label: "No video to download"
 	});
 }
 
