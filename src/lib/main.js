@@ -63,7 +63,7 @@ function handleTabLoad(tab)
 	}
 	
 	tab.timeout = timers.setTimeout(handleTabLoad, 1500, tab);
-	console.log('Timeout='+tab.timeout);
+	//console.log('Timeout='+tab.timeout);
 	
 	if(ret)
 		return;
